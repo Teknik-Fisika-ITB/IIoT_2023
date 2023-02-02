@@ -1,0 +1,11 @@
+{
+  "name":"nodejs-01-",
+  "version":"1.0.0",
+  "description": "",
+  "main":"app.js",
+  "author":"Faqihza Mukhlish",
+  "license":"ITB",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
