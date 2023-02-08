@@ -4,8 +4,5 @@
   "description": "",
   "main":"app.js",
   "author":"Faqihza Mukhlish",
-  "license":"ITB",
-  "dependencies": {
-    "express": "^4.18.2"
-  }
+  "license":"ITB"
 }
