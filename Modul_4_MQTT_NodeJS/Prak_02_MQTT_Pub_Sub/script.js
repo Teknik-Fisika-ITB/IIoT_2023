@@ -1,4 +1,4 @@
-var hostname = "10.6.106.107";
+var hostname = "localhost";
 var port = 8883;
 var clientId = "WebSocket";
 clientId += new Date().getUTCMilliseconds();;
