@@ -11,7 +11,6 @@ httpServer.listen(websocket_port, function () {
   console.log('Aedes MQTT-WS listening on port: ' + websocket_port)
 });
 
-
 broker.listen(broker_port, function () {
   console.log('MQTT broker started and listening on port ', broker_port)
 })

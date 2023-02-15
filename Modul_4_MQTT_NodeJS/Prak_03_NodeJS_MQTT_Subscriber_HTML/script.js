@@ -2,7 +2,7 @@ var hostname = "localhost";
 var port = 8883;
 var clientId = "WebSocket";
 clientId += new Date().getUTCMilliseconds();;
-var topic = "test";
+var topic = "topik";
 
 mqttClient = new Paho.MQTT.Client(hostname, port, clientId);
 mqttClient.onMessageArrived = MessageArrived;
