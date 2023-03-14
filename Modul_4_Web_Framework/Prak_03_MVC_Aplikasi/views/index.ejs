@@ -1,0 +1,21 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Express.js MVC Example</title> 
+        <link rel="stylesheet" type="text/css" href="/css/style.css"> 
+    </head> 
+    <body> 
+        <h1>Express.js MVC Example</h1> 
+        <h2>Add New User</h2> 
+        <form action="/" method="post"> 
+            <input type="text" name="name" placeholder="Name" required> 
+            <input type="email" name="email" placeholder="Email" required> 
+            <button type="submit">Submit</button> 
+        </form> 
+        <h2>List of Users</h2> 
+        <ul> <% users.forEach(function(user) { %> 
+            <li><%= user.name %> (<%= user.email %>)
+            </li> <% }); %> 
+        </ul>
+    </body> 
+</html> 

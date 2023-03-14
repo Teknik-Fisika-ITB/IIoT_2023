@@ -5,7 +5,6 @@ const path = require('path');
 
 // controllers
 const UsersController = require('./controllers/userController');
-const { application } = require('express');
 
 // applications
 const app = express();
@@ -34,6 +33,6 @@ app.use((err,req,res,next)=>{
 })
 
 // start server
-app.listen(5000,()=>{
-    console.log("server is running on http://localhost:5000");
+app.listen(3000,()=>{
+    console.log("server is running on http://localhost:3000");
 });

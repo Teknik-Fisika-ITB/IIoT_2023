@@ -1,11 +1,9 @@
 const User = require("../models/user");
 
-
 const UserController = {};
 
 UserController.index = (req,res)=>{
     User.all((err,rows)=>{
-
         if(err){
             res.render("error",{message:err.message});
         } else {

@@ -1,5 +1,5 @@
 const sqlite3 = require('sqlite3').verbose()
-const DB_PATH = './db/db.sqlite';
+const DB_PATH = './db/user.db';
 
 class User {
     static all(callback){
