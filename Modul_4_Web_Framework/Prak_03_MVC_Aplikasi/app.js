@@ -1,18 +1,39 @@
+// modules
 const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
+
+// controllers
+const UsersController = require('./controllers/userController');
+const { application } = require('express');
+
+// applications
 const app = express();
-const homeController = require('./controllers/homeController');
 
-// setting middleware dari express aplication untuk menampilkan HTML
-app.set('view engine','html');
-app.engine('html',require('ejs').renderFile);
+// setup view engine
+app.set('views',path.join(__dirname,'views'));
+app.set('view engine','ejs');
 
-// setting middleware dari express aplication untuk menggunakan folder static
-app.use(express.static('public'));
+// setup static files location
+app.use(express.static(path.join(__dirname,'public')));
 
+// setup body parser
+app.use(bodyParser.urlencoded({extended: false}));
 
-// middleware route memanggil callback function yang merupakan index method di homecontroller
-app.get('/',homeController.index);
+// routes
+app.get('/', UsersController.index);
+app.post('/',UsersController.create);
 
-app.listen(3000,()=>{
-    console.log('aplikasi berjalan pada port 3000');
+// error handling
+app.use((req,res,next)=>{
+    res.status(404).render('error',{message:"page not found"});
 })
+
+app.use((err,req,res,next)=>{
+    res.status(500).render('error',{message:err.message});
+})
+
+// start server
+app.listen(5000,()=>{
+    console.log("server is running on http://localhost:5000");
+});
