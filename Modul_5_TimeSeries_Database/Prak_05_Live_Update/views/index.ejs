@@ -31,12 +31,17 @@
       });
 
       const source = new EventSource('/data');
+      
       source.addEventListener('message', event => {
         console.log(event);
         const data = JSON.parse(event.data);
-        chart.data.labels.push(data.timestamp);
-        chart.data.datasets[0].data.push(data.value);
-        chart.update();
+        if(chart.data.labels[chart.data.labels.length - 1] === data.timestamp){
+          console.log("no new data");
+        } else {
+          chart.data.labels.push(data.timestamp);
+          chart.data.datasets[0].data.push(data.value);
+          chart.update();
+        }
       });
 
     </script>

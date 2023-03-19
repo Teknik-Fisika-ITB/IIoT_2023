@@ -10,6 +10,15 @@ class Data {
 
         db.close();
     }
+
+    static stream(callback){
+        const db = new sqlite3.Database(DB_PATH);
+        db.get('SELECT * FROM temperature ORDER BY timestamp DESC LIMIT 1', (err, row) => {
+            callback(err,row);
+        });    
+
+        db.close();
+    }
 }
 
 module.exports = Data;
