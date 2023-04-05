@@ -9,7 +9,9 @@
 </head>
 <body>
     <h1>Data Temperature</h1>
-    <canvas id="myChart"></canvas>
+    <div height="600px" width="600px">
+      <canvas id="myChart"></canvas>
+    </div>
 
     <script>
       const ctx = document.getElementById('myChart').getContext('2d');
@@ -24,16 +26,18 @@
               data: [],
               fill: false,
               borderColor: 'rgb(75, 192, 192)',
-              tension: 0.1
+              tension: 0.1,
             }
           ]
         }
       });
-
+      
+      chart.resize(600, 600);
       const source = new EventSource('/data');
       
       source.addEventListener('message', event => {
         console.log(event);
+        chart.resize(600, 600);
         const data = JSON.parse(event.data);
         if(chart.data.labels[chart.data.labels.length - 1] === data.timestamp){
           console.log("no new data");

@@ -9,8 +9,11 @@
 </head>
 <body>
     <h1>Data Temperature</h1>
-    <canvas id="myChart"></canvas>
 
+    <div height="500px" width="700px">
+      <canvas id="myChart"></canvas>
+    </div>
+    
     <script>
       fetch('/data')
         .then(res => res.json())

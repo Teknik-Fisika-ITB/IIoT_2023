@@ -5,7 +5,7 @@ const cors = require('cors');
 
 // routers
 const indexRouter = require('./routes/index');
-const dataRouter = require('./routes/data');
+
 // applications
 const app = express();
 
@@ -22,7 +22,6 @@ app.use(express.static(path.join(__dirname,'public')));
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/',indexRouter);
-// app.use('/data',dataRouter);
 
 // error handling
 app.use((req,res,next)=>{

@@ -5,7 +5,6 @@ const data = require("../models/data");
 /* GET HOME Page */
 
 router.get('/',function(req,res,next){
-    console.log("here");
     res.render("index",{});
 });
 
@@ -18,7 +17,6 @@ router.get('/data',function(req,res,next){
             if(err){
                 console.error(err.message);
             }else{
-                console.log(`data:${JSON.stringify(row)}\n\n`);
                 res.write(`data:${JSON.stringify(row)}\n\n`);
             }
         });
